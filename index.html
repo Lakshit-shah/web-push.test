@@ -7,11 +7,14 @@
     </body>
     <script>
         addEventListener('load', async () => {
-            let serviceWorker = await navigator.serviceWorker.register('./sw.js');
-            console.log(serviceWorker);
-
             const response = await navigator.serviceWorker.getRegistration();
             console.log(response);
+
+            const response1 = await navigator.serviceWorker.getRegistrations();
+            console.log(response1);
+
+            let serviceWorker = await navigator.serviceWorker.register('./sw.js');
+            console.log(serviceWorker);
         })
         function subscribe() {
             console.log('clicked on subscribe');
