@@ -3,6 +3,18 @@
         <title>Web Push</title>
     </head>
     <body>
-        <h5>Hello World</h5>
+        <button onclick="subscribe()">Want to Subscribe ?</button>
     </body>
+    <script>
+        addEventListener('load', async () => {
+            let serviceWorker = await navigator.serviceWorker.register('./sw.js');
+            console.log(serviceWorker);
+
+            const response = await navigator.serviceWorker.getRegistration();
+            console.log(response);
+        })
+        function subscribe() {
+            console.log('clicked on subscribe');
+        }
+    </script>
 </html>
