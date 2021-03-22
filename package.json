@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Lakshit-shah/web-push.test/issues"
   },
-  "homepage": "https://github.com/Lakshit-shah/web-push.test#readme"
+  "homepage": "https://github.com/Lakshit-shah/web-push.test#readme",
+  "dependencies": {
+    "web-push": "^3.4.4"
+  }
 }

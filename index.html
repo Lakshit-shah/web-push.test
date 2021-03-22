@@ -16,8 +16,14 @@
             let serviceWorker = await navigator.serviceWorker.register('./sw.js');
             console.log(serviceWorker);
         })
-        function subscribe() {
-            console.log('clicked on subscribe');
+        async function subscribe() {
+            let serviceWorker = await navigator.serviceWorker.ready;
+            let push = await serviceWorker.pushManager.subscribe({
+                userVisibleOnly: true,
+                // it holds the public key generated from vapidkeys
+                applicationServerKey: 'BK3aojptSCwC3-FSgbdE0z8sSzQq6t1TqH2z93mqLWqlegUk_IbzT5L9-uRbesZ082Sb7TKP195e8nGU_VM2i5M'
+            });
+            console.log(JSON.stringify(push));
         }
     </script>
 </html>
